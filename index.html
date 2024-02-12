@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lorenzo Alighieri 12/02/2024</title>
+
+	<script type="text/javascript" src="lib/jquery-3.5.1.min.js"></script>
+	<script type="text/javascript" src="lib/easeljs-NEXT.min.js"></script>
+	<script type="text/javascript" src="lib/tweenjs.min.js"></script>
+	<script type="text/javascript" src="lib/howler.min.js"></script>
+
+	<script type="text/javascript" src="js/SpriteLoader.js"></script>
+	<script type="text/javascript" src="js/LoadSprites.js"></script>
+	<script type="text/javascript" src="js/Init.js"></script>
+	<script type="text/javascript" src="js/Menu.js"></script>
+	<script type="text/javascript" src="js/Task1.js"></script>
+	<script type="text/javascript" src="js/Task2.js"></script>
+	<script type="text/javascript" src="js/Task3.js"></script>
+	<script type="text/javascript" src="js/Utilities.js"></script>
+	<style>
+		body {
+			background-size: auto;
+			background-color: lightblue;
+		}
+		#myCanvas {
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			height: 100%;
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="myCanvas" ></canvas>
+	<script>
+		const canvas = document.getElementById('myCanvas');
+		let ctx = canvas.getContext('2d', { willReadFrequently: true });
+		loadSprites();
+		window.onload = (event) => {
+			init();
+		};		
+		window.addEventListener('resize', resizeCanvas, false);
+		function resizeCanvas() {
+			canvas.width = window.innerWidth;
+			canvas.height = window.innerHeight;
+		}
+		resizeCanvas();
+	</script>
+</body>
+</html>
